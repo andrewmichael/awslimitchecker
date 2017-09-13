@@ -4,7 +4,12 @@ Changelog
 Unreleased Changes
 ------------------
 
+This release **increases the minimum required versions of boto3 and botocore**:
+
+In order to support configurable maximum retries of API calls, we need botocore >= 1.6.0. This required increasing the boto3 requirement from 1.2.3 to 1.4.6.
+
 * Pin `tox <https://tox.readthedocs.io/>`_ version to 2.7.0 as workaround for parsing change.
+* `Issue #293 <https://github.com/jantman/awslimitchecker/issues/293>`_ - Increase maximum number of retries (boto3/botocore) for ``elbv2`` API calls, to attempt to deal with the large number of calls we have to make in order to count the ALB listeners and rules. This requires botocore >= 1.6.0, which requires boto3 >= 1.4.6.
 
 0.11.0 (2017-08-06)
 -------------------
